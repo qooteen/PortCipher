@@ -121,6 +121,7 @@ public class PortEncode {
     public void decode(String cryptogramFile, String messageFile, String keyFile) {
         String message = readFromFile(cryptogramFile);
         String key = readFromFile(keyFile);
+
         String upperKey = key.toUpperCase().replace('Ё', 'Е');
         List<Character> messageLetters = message.chars().mapToObj(e -> (char) e).collect(Collectors.toList());
         List<Character> keyLetters = upperKey.chars().mapToObj(e -> (char) e).collect(Collectors.toList());
